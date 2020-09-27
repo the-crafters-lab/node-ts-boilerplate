@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon",
-    "dist": "node dist/app.js",
     "build": "tsc -p .",
-    "start": "npm run build && npm run dist",
-    "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
+    "now-build": "npm run build",
+    "clean": "rimraf dist",
+    "dev": "nodemon",
+    "start": "npm run clean && npm run build && node dist/index.js"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,7 @@
     "@typescript-eslint/eslint-plugin": "^4.2.0",
     "@typescript-eslint/parser": "^4.2.0",
     "eslint": "^7.10.0",
+    "eslint-config-airbnb-base": "^14.2.0",
     "eslint-config-prettier": "^6.12.0",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-prettier": "^3.1.4",
